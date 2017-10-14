@@ -3,10 +3,33 @@
 		border-width: 1px;
 		border-style: solid;
 		border-color: #000000;
-		padding: .5em;
 		color: #ffffff;
 		font: inherit;
-		margin-left: 25px;
-		margin-right: 25px;
-		float: left;
-	}
+		position: relative;
+		width: 200px;
+		height: 200px;
+		overflow: hidden;
+		display: inline-block;		
+}
+
+.portfolio-thumbnail img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: auto;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+}
+
+.portfolio_thumbnail img.portrait {
+  width: 100%;
+  height: auto;
+}
+
+.portfolio_thumbnail text.portrait {
+	text-align: center;
+	color: #ffffff;
+	font: inherit;
+}
