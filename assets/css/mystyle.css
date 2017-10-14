@@ -1,0 +1,12 @@
+.portfolio-thumbnail {
+		background-color: #1d242a;
+		border-width: 4px;
+		border-style: solid;
+		border-color: #000000;
+		padding: .5em;
+		color: #ffffff;
+		font: inherit;
+		margin-left: 25px;
+		margin-right: 25px;
+		float: left;
+	}
