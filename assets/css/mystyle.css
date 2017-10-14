@@ -9,7 +9,18 @@
 		width: 200px;
 		height: 200px;
 		overflow: hidden;
-		display: inline-block;		
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		-moz-flex-direction: column;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		-moz-justify-content: center;
+		-webkit-justify-content: center;
+		-ms-justify-content: center;
+		justify-content: center;	
 }
 
 .portfolio-thumbnail img {
@@ -26,6 +37,7 @@
 .portfolio_thumbnail img.portrait {
   width: 100%;
   height: auto;
+
 }
 
 .portfolio_thumbnail text.portrait {
