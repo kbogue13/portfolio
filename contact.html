@@ -49,43 +49,21 @@
 
 						
 						<section>
-									<form method="post" action="contact.php">
-										<div class="row uniform">
-											<div class="6u 12u$(xsmall)">
-												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
-											</div>
-											<div class="6u$ 12u$(xsmall)">
-												<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
-											</div>
-											<div class="12u$">
-												<div class="select-wrapper">
-													<select name="demo-category" id="demo-category">
-														<option value="">- Category -</option>
-														<option value="1">General Question</option>
-														<option value="1">Professional Inquiry</option>
-													</select>
-												</div>
-											</div>
-											<div class="6u 12u$(small)">
-												<input type="checkbox" id="demo-copy" name="demo-copy" checked>
-												<label for="demo-copy">Email me a copy</label>
-											</div>
-											<div class="6u$ 12u$(small)">
-												<input type="checkbox" id="demo-human" name="demo-human" unchecked>
-												<label for="demo-human">Not a robot</label>
-											</div>
-											<div class="12u$">
-												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-											</div>
-											<div class="12u$">
-												<ul class="actions">
-													<li><input type="submit" value="Send Message" class="special"/></li>
-													<li><input type="reset" value="Reset" /></li>
-												</ul>
-											</div>
-										</div>
-									</form>
-								</section>
+							<form action="mail.php" method="POST">
+								<p>Name <input type="text" name="name"></p>
+								<p>Email <input type="text" name="email"></p>
+								<p>Subject
+									<select name="type" size="1">
+											<option value="option1">General Question</option>
+											<option value="option2">Professional Inquiry</option>
+											<option value="option3">Other</option>
+									</select></p>
+								<br />
+
+								<p>Message <textarea name="message" rows="6" cols="25"></textarea><br />
+								<input type="submit" value="Send"><input type="reset" value="Clear"></p>
+							</form>
+						</section>
 					</article>
 
 				<!-- Footer -->
