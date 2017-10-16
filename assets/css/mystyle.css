@@ -1,4 +1,17 @@
+.inner {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		
+}
 .portfolio-thumbnail {
+		display: block;
+		margin: auto;
 		background-color: #1d242a;
 		border-width: 1px;
 		border-style: solid;
