@@ -1,25 +1,22 @@
-is-mobile.container {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
 .inner {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .container {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		margin-left: auto;
+		margin-right: auto;
 		
 }
-		
+	
 .portfolio-thumbnail {
 		display: block;
-		margin: auto;
 		background-color: #1d242a;
 		border-width: 1px;
 		border-style: solid;
