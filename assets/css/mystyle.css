@@ -3,12 +3,17 @@
 	align-items: center;
 	justify-content: center;
 }
-.container {
+.row {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		
 }
+body.is-mobile {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 .portfolio-thumbnail {
 		display: block;
 		margin: auto;
