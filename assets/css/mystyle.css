@@ -6,14 +6,6 @@
 	margin-right: auto;
 }
 
-.about_image img {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin-left: auto;
-	margin-right: auto;
-}
-
 .container {
 		display: flex;
 		align-items: center;
@@ -33,12 +25,4 @@
 		position: relative;
 		padding: 5px;
 		text-align: center;	
-}
-
-.inner img {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin-left: auto;
-	margin-right: auto;
 }
