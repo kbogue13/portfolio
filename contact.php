@@ -1,3 +1,8 @@
+<?php
+if($_POST["message"]) {
+    mail("kbogue13@uw.edu", "Form to email message", $_POST["message"], "From: an@email.address");
+}
+?>
 <!DOCTYPE HTML>
 <!--
 	Spectral by HTML5 UP
@@ -49,7 +54,7 @@
 
 						
 						<section>
-									<form method="post" action="#">
+									<form method="post" action="contact.php">
 										<div class="row uniform">
 											<div class="6u 12u$(xsmall)">
 												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
@@ -79,7 +84,7 @@
 											</div>
 											<div class="12u$">
 												<ul class="actions">
-													<li><input type="submit" value="Send Message" class="special" action="form-to-email.php"/></li>
+													<li><input type="submit" value="Send Message" class="special"/></li>
 													<li><input type="reset" value="Reset" /></li>
 												</ul>
 											</div>
