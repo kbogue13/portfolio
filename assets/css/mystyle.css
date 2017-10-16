@@ -3,17 +3,17 @@
 	align-items: center;
 	justify-content: center;
 }
-.row {
+.container {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		
 }
-body.is-mobile {
+body .is-mobile #section {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-	}
+}		
 .portfolio-thumbnail {
 		display: block;
 		margin: auto;
@@ -24,8 +24,8 @@ body.is-mobile {
 		color: #ffffff;
 		font: inherit;
 		position: relative;
-		width: 230px;
-		height: 230px;
+		width: 261.33px;
+		height: 261.33px;
 		padding: 5px;	
 }
 
