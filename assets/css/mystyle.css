@@ -6,30 +6,33 @@
 	margin-right: auto;
 
 }
-
+.wrapper.style5 {
+	background-color: #ffffff;
+	color: #4E4852;
+}
 .container {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		margin-left: auto;
-		margin-right: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: auto;
+	margin-right: auto;
 		
 }
 	
 .portfolio-thumbnail {
-		display: block;
-		background-color: #1d242a;
-		border-width: 1px;
-		border-style: solid;
-		border-color: #000000;
-		color: #ffffff;
-		font: inherit;
-		position: relative;
-		padding: 5px;
-		text-align: center;	
+	display: block;
+	background-color: #1d242a;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #000000;
+	color: #ffffff;
+	font: inherit;
+	position: relative;
+	padding: 5px;
+	text-align: center;	
 }
 
 #map {
 	height: 500px;
-	width: 100%;
+	width: 80%;
 }
