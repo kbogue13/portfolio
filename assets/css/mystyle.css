@@ -6,6 +6,11 @@
 	margin-right: auto;
 
 }
+
+.body {
+	max-width: 70%;
+
+}
 .wrapper.style5 {
 	background-color: #ffffff;
 	color: #4E4852;
