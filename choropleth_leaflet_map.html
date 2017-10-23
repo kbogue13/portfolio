@@ -123,6 +123,7 @@
 								</div>
 								<div class="leaflet-control-container"><div class="leaflet-top leaflet-left"><div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="#" title="Zoom in">+</a><a class="leaflet-control-zoom-out" href="#" title="Zoom out">-</a></div></div><div class="leaflet-top leaflet-right"></div><div class="leaflet-bottom leaflet-left"></div><div class="leaflet-bottom leaflet-right"><div class="leaflet-control-attribution leaflet-control"></div></div></div>	
 							</div>
+<script type="text/javascript" src="https://raw.githubusercontent.com/kbogue13/portfolio/master/assets/js/global_co2.js"></script>
 <script>
 var map = L.map('map').setView([20, 10], 2);
 
@@ -133,7 +134,7 @@ var map = L.map('map').setView([20, 10], 2);
 		}).addTo(map);
 
 		//add the geoJson file that you converted to js - see that burglary is what I named the var not the file. Where ever you see burglary in this document (other than in places where it is written on the website, only the parts where it is in the js) replace it with what you named the variable in your js file. 
-		L.geojson(global_co2).addTo(map);
+		L.geojson(CO2_PerCap).addTo(map);
 	//	L.geoJson(burglary).addTo(map);
 	// control that shows what the user is hovering over - white box in the top right
 		var info = L.control();
