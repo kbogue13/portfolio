@@ -15,7 +15,12 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--This calls my custom stylesheet href="assets/css/mystyle.css"-->
 		<link rel="stylesheet" href="assets/css/mystyle.css" />
-
+		<!--This calls the leaflet stylesheet-->
+		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css">
+		<!--This calls the leaflet javascript file-->
+		<!-- Make sure you put this AFTER Leaflet's CSS -->
+ 		<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js">
+		</script>
 
 	</head>
 	<body>
@@ -49,10 +54,215 @@
 						</header>
 						<section class="wrapper style5">
 							<div class="inner">
-								Coming Soon!
+								<div id="map" class="leaflet-container leaflet-fade-anim" style="position:relative;" tabindex="0">
+									<div class="leaflet-tile-pane">
+										<div class="leaflet-objects-pane"><div class="leaflet-shadow-pane"></div>
+										<div class="leaflet-overlay-pane">
+											<svg class="leaflet-zoom-animated" style="transform: translate3d(-583px, 250px, 0px);" width="1967" height="0" viewBox="-583 250 1967 0">
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="#0033ff" stroke-opacity="0.5" stroke-width="5" fill="#0033ff" fill-opacity="0.2" class="leaflet-clickable" d="M163.57142857142858 250L225.42857142857142 250z"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="#0033ff" stroke-opacity="0.5" stroke-width="5" fill="#0033ff" fill-opacity="0.2" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="#0033ff" stroke-opacity="0.5" stroke-width="5" fill="#0033ff" fill-opacity="0.2" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="#0033ff" stroke-opacity="0.5" stroke-width="5" fill="#0033ff" fill-opacity="0.2" class="leaflet-clickable" d="M225.42857142857142 250L294.57142857142856 250z"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="#0033ff" stroke-opacity="0.5" stroke-width="5" fill="#0033ff" fill-opacity="0.2" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="#0033ff" stroke-opacity="0.5" stroke-width="5" fill="#0033ff" fill-opacity="0.2" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="#0033ff" stroke-opacity="0.5" stroke-width="5" fill="#0033ff" fill-opacity="0.2" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="#0033ff" stroke-opacity="0.5" stroke-width="5" fill="#0033ff" fill-opacity="0.2" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="#0033ff" stroke-opacity="0.5" stroke-width="5" fill="#0033ff" fill-opacity="0.2" class="leaflet-clickable" d="M294.57142857142856 250L356.42857142857144 250z"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="#0033ff" stroke-opacity="0.5" stroke-width="5" fill="#0033ff" fill-opacity="0.2" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="#0033ff" stroke-opacity="0.5" stroke-width="5" fill="#0033ff" fill-opacity="0.2" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="#0033ff" stroke-opacity="0.5" stroke-width="5" fill="#0033ff" fill-opacity="0.2" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="#0033ff" stroke-opacity="0.5" stroke-width="5" fill="#0033ff" fill-opacity="0.2" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="#0033ff" stroke-opacity="0.5" stroke-width="5" fill="#0033ff" fill-opacity="0.2" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="#0033ff" stroke-opacity="0.5" stroke-width="5" fill="#0033ff" fill-opacity="0.2" class="leaflet-clickable" d="M356.42857142857144 250L425.57142857142856 250z"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="#0033ff" stroke-opacity="0.5" stroke-width="5" fill="#0033ff" fill-opacity="0.2" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="#0033ff" stroke-opacity="0.5" stroke-width="5" fill="#0033ff" fill-opacity="0.2" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="#0033ff" stroke-opacity="0.5" stroke-width="5" fill="#0033ff" fill-opacity="0.2" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="#0033ff" stroke-opacity="0.5" stroke-width="5" fill="#0033ff" fill-opacity="0.2" class="leaflet-clickable" d="M425.57142857142856 250L487.42857142857144 250z"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="#0033ff" stroke-opacity="0.5" stroke-width="5" fill="#0033ff" fill-opacity="0.2" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="#0033ff" stroke-opacity="0.5" stroke-width="5" fill="#0033ff" fill-opacity="0.2" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="#0033ff" stroke-opacity="0.5" stroke-width="5" fill="#0033ff" fill-opacity="0.2" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="#0033ff" stroke-opacity="0.5" stroke-width="5" fill="#0033ff" fill-opacity="0.2" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="#0033ff" stroke-opacity="0.5" stroke-width="5" fill="#0033ff" fill-opacity="0.2" class="leaflet-clickable" d="M556.5714285714286 250L618.4285714285714 250z"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="#0033ff" stroke-opacity="0.5" stroke-width="5" fill="#0033ff" fill-opacity="0.2" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="#0033ff" stroke-opacity="0.5" stroke-width="5" fill="#0033ff" fill-opacity="0.2" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="#0033ff" stroke-opacity="0.5" stroke-width="5" fill="#0033ff" fill-opacity="0.2" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="#0033ff" stroke-opacity="0.5" stroke-width="5" fill="#0033ff" fill-opacity="0.2" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="white" stroke-opacity="1" stroke-width="2" stroke-dasharray="3" fill="#FED976" fill-opacity="0.7" class="leaflet-clickable" d="M163.57142857142858 250L225.42857142857142 250z"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="white" stroke-opacity="1" stroke-width="2" stroke-dasharray="3" fill="#FED976" fill-opacity="0.7" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="white" stroke-opacity="1" stroke-width="2" stroke-dasharray="3" fill="#FED976" fill-opacity="0.7" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="white" stroke-opacity="1" stroke-width="2" stroke-dasharray="3" fill="#FED976" fill-opacity="0.7" class="leaflet-clickable" d="M225.42857142857142 250L294.57142857142856 250z"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="white" stroke-opacity="1" stroke-width="2" stroke-dasharray="3" fill="#FD8D3C" fill-opacity="0.7" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="white" stroke-opacity="1" stroke-width="2" stroke-dasharray="3" fill="#FED976" fill-opacity="0.7" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="white" stroke-opacity="1" stroke-width="2" stroke-dasharray="3" fill="#FED976" fill-opacity="0.7" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="white" stroke-opacity="1" stroke-width="2" stroke-dasharray="3" fill="#FED976" fill-opacity="0.7" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="white" stroke-opacity="1" stroke-width="2" stroke-dasharray="3" fill="#FED976" fill-opacity="0.7" class="leaflet-clickable" d="M294.57142857142856 250L356.42857142857144 250z"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="white" stroke-opacity="1" stroke-width="2" stroke-dasharray="3" fill="#FC4E2A" fill-opacity="0.7" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="white" stroke-opacity="1" stroke-width="2" stroke-dasharray="3" fill="#FEB24C" fill-opacity="0.7" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="white" stroke-opacity="1" stroke-width="2" stroke-dasharray="3" fill="#FED976" fill-opacity="0.7" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="white" stroke-opacity="1" stroke-width="2" stroke-dasharray="3" fill="#FED976" fill-opacity="0.7" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="white" stroke-opacity="1" stroke-width="2" stroke-dasharray="3" fill="#FED976" fill-opacity="0.7" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="white" stroke-opacity="1" stroke-width="2" stroke-dasharray="3" fill="#FEB24C" fill-opacity="0.7" class="leaflet-clickable" d="M356.42857142857144 250L425.57142857142856 250z"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="white" stroke-opacity="1" stroke-width="2" stroke-dasharray="3" fill="#FD8D3C" fill-opacity="0.7" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="white" stroke-opacity="1" stroke-width="2" stroke-dasharray="3" fill="#FED976" fill-opacity="0.7" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="white" stroke-opacity="1" stroke-width="2" stroke-dasharray="3" fill="#FED976" fill-opacity="0.7" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="white" stroke-opacity="1" stroke-width="2" stroke-dasharray="3" fill="#FEB24C" fill-opacity="0.7" class="leaflet-clickable" d="M425.57142857142856 250L487.42857142857144 250z"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="white" stroke-opacity="1" stroke-width="2" stroke-dasharray="3" fill="#BD0026" fill-opacity="0.7" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="white" stroke-opacity="1" stroke-width="2" stroke-dasharray="3" fill="#FEB24C" fill-opacity="0.7" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="white" stroke-opacity="1" stroke-width="2" stroke-dasharray="3" fill="#FED976" fill-opacity="0.7" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="white" stroke-opacity="1" stroke-width="2" stroke-dasharray="3" fill="#FED976" fill-opacity="0.7" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="white" stroke-opacity="1" stroke-width="2" stroke-dasharray="3" fill="#FED976" fill-opacity="0.7" class="leaflet-clickable" d="M556.5714285714286 250L618.4285714285714 250z"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="white" stroke-opacity="1" stroke-width="2" stroke-dasharray="3" fill="#FED976" fill-opacity="0.7" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="white" stroke-opacity="1" stroke-width="2" stroke-dasharray="3" fill="#FED976" fill-opacity="0.7" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="white" stroke-opacity="1" stroke-width="2" stroke-dasharray="3" fill="#FED976" fill-opacity="0.7" class="leaflet-clickable" d="M0 0"></path></g>
+												<g><path stroke-linejoin="round" stroke-linecap="round" fill-rule="evenodd" stroke="white" stroke-opacity="1" stroke-width="2" stroke-dasharray="3" fill="#FED976" fill-opacity="0.7" class="leaflet-clickable" d="M0 0"></path></g>
+													</svg>
+												</div>
+											<div class="leaflet-marker-pane"></div>
+										<div class="leaflet-popup-pane"></div>
+									</div>
+								</div>
+								<div class="leaflet-control-container"><div class="leaflet-top leaflet-left"><div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="#" title="Zoom in">+</a><a class="leaflet-control-zoom-out" href="#" title="Zoom out">-</a></div></div><div class="leaflet-top leaflet-right"></div><div class="leaflet-bottom leaflet-left"></div><div class="leaflet-bottom leaflet-right"><div class="leaflet-control-attribution leaflet-control"></div></div></div>	
 							</div>
+<script>
+var map = L.map('map').setView([20, 10], 2);
 
-						</section>		
+		L.tileLayer('http://{s}.tile.stamen.com/terrain/{z}/{x}/{y}.png', {
+	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+	subdomains: 'abcd',
+			
+		}).addTo(map);
+
+		//add the geoJson file that you converted to js - see that burglary is what I named the var not the file. Where ever you see burglary in this document (other than in places where it is written on the website, only the parts where it is in the js) replace it with what you named the variable in your js file. 
+		L.geojson(global_co2).addTo(map);
+	//	L.geoJson(burglary).addTo(map);
+	// control that shows what the user is hovering over - white box in the top right
+		var info = L.control();
+
+		info.onAdd = function (map) {	
+			this._div = L.DomUtil.create('div', 'info');
+			this.update();
+			return this._div;
+		};
+		//update this next bit with your property names (I think of properties as attribute titles) also update the text in the heading tags to describe your data. If you are creating a choropleth map you may want to add '<b>' + props.NAME + '</b><br /> infront of the props.burgCount section so the name of the country or county will update as well, see the leaflet example code if you need more help
+
+		info.update = function (props) {
+			this._div.innerHTML = '<h4>CO2 Emissions Per Capita</h4>' +  (props ?
+				 props.CO2_PerCap + ' How many tons of CO2 does the average citizen emit per year?'
+				: 'Hover over a country');
+		};
+
+		info.addTo(map);
+		
+
+//// get color depending on burgCount which represents number of reports counted in the grid cell - first set color scheme
+		function getColor(d) {
+			return d > 20 ? '#800026' :
+			       d > 15  ? '#E31A1C' :
+			       d > 10   ? '#FD8D3C' :
+			       d > 5   ? '#FEB24C' :
+			       d > 0   ? '#FED976' :
+			                  '#FFEDA0';
+		}
+
+//styling the polygon so that fill changes with the value associated with the cell and number of reported burglary and B and E calls
+		function style(feature) {
+    return {
+        fillColor: getColor(feature.properties.burgCount),
+        weight: 2,
+        opacity: 1,
+        color: 'white',
+        dashArray: '3',
+        fillOpacity: 0.4
+    };
+}
+
+//highlighting features - change the style as you see fit
+function highlightFeature(e) {
+			var layer = e.target;
+
+			layer.setStyle({
+				weight: 5,
+				color: '#666',
+				dashArray: '',
+				fillOpacity: 0.1
+			});
+
+			if (!L.Browser.ie && !L.Browser.opera) {
+				layer.bringToFront();
+			}
+
+			info.update(layer.feature.properties);
+		}
+L.geoJson(burglary, {style: style}).addTo(map);
+
+
+//keep going 
+
+var geojson;
+
+		function resetHighlight(e) {
+			geojson.resetStyle(e.target);
+			info.update();
+		}
+
+		function zoomToFeature(e) {
+			map.fitBounds(e.target.getBounds());
+		}
+
+		function onEachFeature(feature, layer) {
+			layer.on({
+				mouseover: highlightFeature,
+				mouseout: resetHighlight,
+				click: zoomToFeature
+			});
+		}
+
+		//style specific to file
+
+		geojson = L.geoJson(burglary, {
+			style: style,
+			onEachFeature: onEachFeature
+		}).addTo(map);
+
+		map.attributionControl.addAttribution('Crime data &copy; <a href="https://data.cityoftacoma.org/">Open Data Tacoma</a>');
+
+
+		//the static legend in the bottom right
+		var legend = L.control({position: 'bottomright'});
+
+		legend.onAdd = function (map) {
+
+var div = L.DomUtil.create('div', 'info legend'),
+				grades = [0, 5, 10, 15, 20, ],
+				key_labels = [ "0-5", "6-10", "11-15", '16-20', '20+'],
+				labels = ["Number of reported cases"],
+				from, to;
+
+								
+
+			for (var i = 0; i < grades.length; i++) {
+				from = grades[i];
+				to = grades[i + 1];
+
+				labels.push(
+					'<i style="background:' + getColor(from + 1) + '"></i> ' +
+					 key_labels[i]);
+			}
+
+			div.innerHTML = labels.join('<br>');
+			return div;
+		};
+
+		legend.addTo(map);
+
+			map.on('click', onMapClick);
+
+	</script>
+						</section>
+						</article>
+						</div>
+						</body>
+						</html>		
 
 				<!-- Footer -->
 					<footer id="footer">
