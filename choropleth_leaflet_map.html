@@ -61,7 +61,7 @@
 						<header>
 							<h2>Choropleth Leaflet Map</h2>
 						</header>
-						<section class="wrapper style5">
+						<section>
 								<div id="map" class="leaflet-container leaflet-fade-anim" style="position:relative;" tabindex="0">
 									<div class="leaflet-tile-pane">
 										<div class="leaflet-objects-pane"><div class="leaflet-shadow-pane"></div>
@@ -166,12 +166,13 @@ var map = L.map('map').setView([20, 10], 2);
 
 //// get color depending on burgCount which represents number of reports counted in the grid cell - first set color scheme
 		function getColor(d) {
-			return d > 20 ? '#800026' :
-			       d > 15  ? '#E31A1C' :
-			       d > 10   ? '#FD8D3C' :
-			       d > 5   ? '#FEB24C' :
-			       d > 0   ? '#FED976' :
-			                  '#FFEDA0';
+			return d > 20 ? '#d7191c' :
+			       d > 15  ? '#fdae61' :
+			       d > 10   ? '#ffffbf' :
+			       d > 5   ? '#a6d96a' :
+			       d > 0   ? '#1a9641' :
+			       d = null  ? '#696969':
+			       				'696969';
 		}
 
 //styling the polygon so that fill changes with the value associated with the cell and number of reported burglary and B and E calls
@@ -180,9 +181,9 @@ var map = L.map('map').setView([20, 10], 2);
         fillColor: getColor(feature.properties.CO2_PerCap),
         weight: 2,
         opacity: 1,
-        color: 'white',
+        color: 'black',
         dashArray: '3',
-        fillOpacity: 0.4
+        fillOpacity: 0.7
     };
 }
 
@@ -238,7 +239,7 @@ var geojson;
 
 
 		//the static legend in the bottom right
-		var legend = L.control({position: 'bottomright'});
+		var legend = L.control({position: 'bottomleft'});
 
 		legend.onAdd = function (map) {
 
