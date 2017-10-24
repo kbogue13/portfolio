@@ -53,7 +53,7 @@
 							<h2>Choropleth Leaflet Map</h2>
 						</header>
 						<section class="wrapper style5">
-							<div class="inner">
+							
 								<div id="map" class="leaflet-container leaflet-fade-anim" style="position:relative;" tabindex="0">
 									<div class="leaflet-tile-pane">
 										<div class="leaflet-objects-pane"><div class="leaflet-shadow-pane"></div>
@@ -120,21 +120,21 @@
 											<div class="leaflet-marker-pane"></div>
 										<div class="leaflet-popup-pane"></div>
 									</div>
-								</div>
+								
 								<div class="leaflet-control-container"><div class="leaflet-top leaflet-left"><div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="#" title="Zoom in">+</a><a class="leaflet-control-zoom-out" href="#" title="Zoom out">-</a></div></div><div class="leaflet-top leaflet-right"></div><div class="leaflet-bottom leaflet-left"></div><div class="leaflet-bottom leaflet-right"><div class="leaflet-control-attribution leaflet-control"></div></div></div>	
 							</div>
-<script type="text/javascript" src="https://raw.githubusercontent.com/kbogue13/portfolio/master/assets/js/global_co2.js"></script>
+
 <script>
 var map = L.map('map').setView([20, 10], 2);
 
 		L.tileLayer('http://{s}.tile.stamen.com/terrain/{z}/{x}/{y}.png', {
 	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-	subdomains: 'abcd',
+	subdomains: 'abcd', 
 			
 		}).addTo(map);
-
+	
 		//add the geoJson file that you converted to js - see that burglary is what I named the var not the file. Where ever you see burglary in this document (other than in places where it is written on the website, only the parts where it is in the js) replace it with what you named the variable in your js file. 
-		L.geojson(CO2_PerCap).addTo(map);
+		L.geoJson(CO2_PerCap).addTo(map);
 	//	L.geoJson(burglary).addTo(map);
 	// control that shows what the user is hovering over - white box in the top right
 		var info = L.control();
@@ -147,7 +147,7 @@ var map = L.map('map').setView([20, 10], 2);
 		//update this next bit with your property names (I think of properties as attribute titles) also update the text in the heading tags to describe your data. If you are creating a choropleth map you may want to add '<b>' + props.NAME + '</b><br /> infront of the props.burgCount section so the name of the country or county will update as well, see the leaflet example code if you need more help
 
 		info.update = function (props) {
-			this._div.innerHTML = '<h4>CO2 Emissions Per Capita</h4>' +  (props ?
+			this._div.innerHTML = '<h4>CO2 Emissions Per Capita</h4>' +  (props ? props.CNTRY_NAME +
 				 props.CO2_PerCap + ' How many tons of CO2 does the average citizen emit per year?'
 				: 'Hover over a country');
 		};
@@ -168,7 +168,7 @@ var map = L.map('map').setView([20, 10], 2);
 //styling the polygon so that fill changes with the value associated with the cell and number of reported burglary and B and E calls
 		function style(feature) {
     return {
-        fillColor: getColor(feature.properties.burgCount),
+        fillColor: getColor(feature.properties.CO2_PerCap),
         weight: 2,
         opacity: 1,
         color: 'white',
@@ -194,7 +194,7 @@ function highlightFeature(e) {
 
 			info.update(layer.feature.properties);
 		}
-L.geoJson(burglary, {style: style}).addTo(map);
+L.geoJson(CO2_PerCap, {style: style}).addTo(map);
 
 
 //keep going 
@@ -220,7 +220,7 @@ var geojson;
 
 		//style specific to file
 
-		geojson = L.geoJson(burglary, {
+		geojson = L.geoJson(CO2_PerCap, {
 			style: style,
 			onEachFeature: onEachFeature
 		}).addTo(map);
@@ -284,6 +284,7 @@ var div = L.DomUtil.create('div', 'info legend'),
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+			<script src="aeests/js/global_co2.js"></script>
 
 	</body>
 </html>
