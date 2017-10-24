@@ -30,6 +30,7 @@
 	 		<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
 	 		<!--This calls my geoJson that i converted to a js-->
 	 		<script src="assets/js/global_co2.js"></script>
+	 		<script src="assets/js/global_co2.geojson"></script>
 
 	</head>
 	<body>
@@ -131,9 +132,9 @@
 							<div class="leaflet-control-container"><div class="leaflet-top leaflet-left"><div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="#" title="Zoom in">+</a><a class="leaflet-control-zoom-out" href="#" title="Zoom out">-</a></div></div><div class="leaflet-top leaflet-right"></div><div class="leaflet-bottom leaflet-left"></div><div class="leaflet-bottom leaflet-right"><div class="leaflet-control-attribution leaflet-control"></div></div></div>	
 							</div>
 
-<script type="text/javascript">
+<script>
 
-var map = L.map('map').setView([20, 10], 2);
+var map = L.map('map').setView([20, 6], 2);
 
 		L.tileLayer('http://{s}.tile.stamen.com/terrain/{z}/{x}/{y}.png', {
 	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
@@ -156,8 +157,8 @@ var map = L.map('map').setView([20, 10], 2);
 		//update this next bit with your property names (I think of properties as attribute titles) also update the text in the heading tags to describe your data. If you are creating a choropleth map you may want to add '<b>' + props.NAME + '</b><br /> infront of the props.burgCount section so the name of the country or county will update as well, see the leaflet example code if you need more help
 
 		info.update = function (props) {
-			this._div.innerHTML = '<h4>CO2 Emissions Per Capita (in tons)</h4>' +  (props ? 
-				 props.CO2_PerCap + ' How many tons of CO2 does the average citizen emit per year?'
+			this._div.innerHTML = '<h4>CO2 Emissions Per Capita</h4>' +  (props ? 
+				'<b>' + props.CNTRY_NAME + '</b><br />' + props.CO2_PerCap + 'tons/year'
 				: 'Hover over a country');
 		};
 
@@ -172,7 +173,7 @@ var map = L.map('map').setView([20, 10], 2);
 			       d > 5   ? '#a6d96a' :
 			       d > 0   ? '#1a9641' :
 			       d = null  ? '#696969':
-			       				'696969';
+			       				'#696969';
 		}
 
 //styling the polygon so that fill changes with the value associated with the cell and number of reported burglary and B and E calls
@@ -181,29 +182,12 @@ var map = L.map('map').setView([20, 10], 2);
         fillColor: getColor(feature.properties.CO2_PerCap),
         weight: 2,
         opacity: 1,
-        color: 'black',
+        color: 'grey',
         dashArray: '3',
         fillOpacity: 0.7
     };
 }
 
-//highlighting features - change the style as you see fit
-function highlightFeature(e) {
-			var layer = e.target;
-
-			layer.setStyle({
-				weight: 5,
-				color: '#666',
-				dashArray: '',
-				fillOpacity: 0.1
-			});
-
-			if (!L.Browser.ie && !L.Browser.opera) {
-				layer.bringToFront();
-			}
-
-			info.update(layer.feature.properties);
-		}
 L.geoJson(CO2_PerCap, {style: style}).addTo(map);
 
 
@@ -244,8 +228,8 @@ var geojson;
 		legend.onAdd = function (map) {
 
 var div = L.DomUtil.create('div', 'info legend'),
-				grades = [0, 5, 10, 15, 20, ],
-				key_labels = [ "0-5", "6-10", "11-15", '16-20', '20+'],
+				grades = [0, 5, 10, 15, 20],
+				key_labels = ["0-5", "6-10", "11-15", '16-20', '20+'],
 				labels = ["Emissions per capita"],
 				from, to;
 
