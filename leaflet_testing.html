@@ -53,13 +53,10 @@
 
 	<div id="map"></div>
 
-	<script src="https://rawgit.com/kbogue13/portfolio/master/global_co2.js"></script>
+	<script src="https://rawgit.com/kbogue13/portfolio/master/assets/js/global_co2.js"></script>
 	
 	<script>
 		
-		var mapAccessToken = 'sk.eyJ1Ijoia2JvZ3VlMTMiLCJhIjoiY2o5Yms3cnV2MWV6dDM0cDl0aDNjNHdzYSJ9.MLAsThxDZL5rfW9fyWSeww';
-
-
 		var map = L.map('map').setView([ 20, 6], 1.7);
 		
 
@@ -178,7 +175,7 @@ var legend = L.control({position: 'bottomleft'});
 	legend.onAdd = function (map) {
 
 		var div = L.DomUtil.create('div', 'info legend'),
-			grades = [0, 2.5, 5, 7.5, 10, ],
+			grades = [0, 2.5, 5, 7.5, 10],
 			labels = [],
 			from, to;
 
