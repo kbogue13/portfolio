@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Global CO2 Emissions</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--Leaflet CSS-->
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+	<!--SCRIPTS-->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<!--Leaflet script. Must be placed after Leaflet CSS-->
+	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+	
+	<style>
+		#map {
+			width: 800px;
+			height: 500px;
+		}
+
+		.info {
+			padding: 6px 8px;
+			font: 14px/16px Arial, Helvetica, sans-serif;
+			background: white;
+			background: rgba(255,255,255,0.8);
+			box-shadow: 0 0 15px rgba(0,0,0,0.2);
+			border-radius: 5px;
+		}
+		.info h4 {
+			margin: 0 0 5px;
+			color: #777;
+		}
+
+		.legend {
+			text-align: left;
+			line-height: 18px;
+			color: #555;
+		}
+		.legend i {
+			width: 18px;
+			height: 18px;
+			float: left;
+			margin-right: 8px;
+			opacity: 0.7;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div id="map"></div>
+<script type="text/javascript" src="assets/js/global_co2.js"></script>
+	<script>
+		
+		var map = L.map('map').setView([ 20, 6], 1.7);
+		var mapAccessToken = 'pk.eyJ1Ijoia2JvZ3VlMTMiLCJhIjoiY2o4d2ZvZHdvMDd2MDMybnI1aW42aWM5byJ9.lxE22vAwA_PLMOVayYIh7w';
+
+		L.tileLayer('http://{s}.tile.stamen.com/terrain/{z}/{x}/{y}.png', {
+	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+	subdomains: 'abcd',
+			
+		}).addTo(map);
+// control that shows info in the white info box in the top right
+	var info = L.control();
+
+	info.onAdd = function (map) {
+		this._div = L.DomUtil.create('div', 'info');
+		this.update();
+		return this._div;
+	};
+
+	//Seems like there is somethig missing here that would define the props
+
+	info.update = function (props) {
+		this._div.innerHTML = '<h4>CO2 Emissions Per Capita</h4>' +  (props ?
+			'<b>' + props.country + '</b><br />' + props.CO2_PerCap + ' metric tons/year' + '<br />' + 'World Rank:' + props.WORLD_RANK
+			: 'Hover over a country');
+	};
+
+	info.addTo(map);
+
+
+//// get color depending on CO2_PerCap which represents CO2 emissions per capita
+	function getColor(d) {
+		return d > 10 ? '#d7191c' :
+		       d > 7.5  ? '#fdae61' :
+		       d > 5   ? '#ffffbf' :
+		       d > 2.5  ? '#a6d96a' :
+		       d > 0   ? '#1a9641' :
+		       			'#696969';
+	}
+
+//styling the GeoJSON so that fill changes with the value associated with the cell and CO2 emissions
+	function style(feature) {
+    	return {
+        fillColor: getColor(feature.properties.CO2_PerCap),
+        weight: 1,
+        opacity: 1,
+        color: 'black',
+        dashArray: '3',
+        fillOpacity: 0.7,
+    };
+}
+
+function highlightFeature(e) {
+		var layer = e.target;
+
+		layer.setStyle({
+			weight: 3,
+			color: '#ffffff',
+			dashArray: '',
+			fillOpacity: 0.1
+		});
+
+		if (!L.Browser.ie && !L.Browser.opera) {
+			layer.bringToFront();
+		}
+
+		info.update(layer.feature.properties.CO2_PerCap);
+		}
+L.geoJson(CO2_PerCap, {style: style}).addTo(map);
+
+var geojson;
+
+		function resetHighlight(e) {
+			geojson.resetStyle(e.target);
+			info.update();
+		}
+
+		function zoomToFeature(e) {
+			map.fitBounds(e.target.getBounds());
+		}
+
+		function onEachFeature(feature, layer) {
+			layer.on({
+				mouseover: highlightFeature,
+				mouseout: resetHighlight,
+				click: zoomToFeature
+			});
+		}
+
+		//style specific to file
+
+		geojson = L.geoJson(CO2_PerCap, {
+			style: style,
+			onEachFeature: onEachFeature
+		}).addTo(map);
+
+	map.attributionControl.addAttribution('Emissions data &copy; <a href="https://http://data.un.org/">UNdata</a>');
+
+var legend = L.control({position: 'bottomleft'});
+
+	legend.onAdd = function (map) {
+
+		var div = L.DomUtil.create('div', 'info legend'),
+			grades = [0, 2.5, 5, 7.5, 10, ],
+			labels = [],
+			from, to;
+
+		for (var i = 0; i < grades.length; i++) {
+			from = grades[i];
+			to = grades[i + 1];
+
+			labels.push(
+				'<i style="background:' + getColor(from + 1) + '"></i> ' +
+				from + (to ? '&ndash;' + to : '+'));
+		}
+
+		div.innerHTML = labels.join('<br>');
+		return div;
+	};
+
+	legend.addTo(map);
+
+	</script>
+</body>
+</html>
