@@ -55,14 +55,31 @@
 <script type="text/javascript" src="assets/js/global_co2.js"></script>
 	<script>
 		
+		var mapAccessToken = 'sk.eyJ1Ijoia2JvZ3VlMTMiLCJhIjoiY2o5Yms3cnV2MWV6dDM0cDl0aDNjNHdzYSJ9.MLAsThxDZL5rfW9fyWSeww';
+
 		var map = L.map('map').setView([ 20, 6], 1.7);
-		var mapAccessToken = 'pk.eyJ1Ijoia2JvZ3VlMTMiLCJhIjoiY2o4d2ZvZHdvMDd2MDMybnI1aW42aWM5byJ9.lxE22vAwA_PLMOVayYIh7w';
+		
 
 		L.tileLayer('http://{s}.tile.stamen.com/terrain/{z}/{x}/{y}.png', {
 	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
 	subdomains: 'abcd',
-			
+		
 		}).addTo(map);
+
+//Control limiting panning
+		var southWest = L.latLng(-89.98155760646617, -180),
+		northEast = L.latLng(89.99346179538875, 180);
+		var bounds = L.latLngBounds(southWest, northEast);
+
+		map.setMaxBounds(bounds);
+		map.on('drag', function() {
+		    map.panInsideBounds(bounds, { animate: false });
+		});
+
+	map.options.maxZoom = 4;
+	map.options.minZoom = 1.7;
+
+		
 // control that shows info in the white info box in the top right
 	var info = L.control();
 
@@ -174,6 +191,7 @@ var legend = L.control({position: 'bottomleft'});
 	};
 
 	legend.addTo(map);
+
 
 	</script>
 </body>
