@@ -98,7 +98,7 @@
 	//Seems like there is somethig missing here that would define the props
 
 	info.update = function (props) {
-		this._div.innerHTML = '<h4>CO2 Emissions Per Capita</h4>' +  (props ?
+		this._div.innerHTML = '<h4>CO2 Emissions Per Person</h4>' +  (props ?
 			'<b>' + props.country + '</b><br />' + props.CO2_PerCap + ' metric tons/year' + '<br />' + 'World Rank:' + props.WORLD_RANK + '/198'
 			: 'Hover over a country');
 	};
