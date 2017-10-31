@@ -14,6 +14,7 @@
 .wrapper.style5 {
 	background-color: #ffffff;
 	color: #4E4852;
+
 }
 .container {
 	display: flex;
@@ -38,8 +39,8 @@
 }
 
 #map {
-	height: 650px;
-	width: 52%;
+	height: 550px;
+	width: 60%;
 	display: flex;
 	align-items: center;
 	justify-content: center;

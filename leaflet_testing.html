@@ -17,8 +17,10 @@
 	
 	<style>
 		#map {
-			width: 800px;
-			height: 500px;
+			width: 75%;
+			height: 550px;
+			margin-left: auto;
+			margin-right: auto;
 		
 		}
 
@@ -97,7 +99,7 @@
 
 	info.update = function (props) {
 		this._div.innerHTML = '<h4>CO2 Emissions Per Capita</h4>' +  (props ?
-			'<b>' + props.country + '</b><br />' + props.CO2_PerCap + ' metric tons/year' + '<br />' + 'World Rank:' + props.WORLD_RANK
+			'<b>' + props.country + '</b><br />' + props.CO2_PerCap + ' metric tons/year' + '<br />' + 'World Rank:' + props.WORLD_RANK + '/198'
 			: 'Hover over a country');
 	};
 
@@ -106,10 +108,10 @@
 
 //// get color depending on CO2_PerCap which represents CO2 emissions per capita
 	function getColor(d) {
-		return d > 10 ? '#d7191c' :
-		       d > 7.5  ? '#fdae61' :
-		       d > 5   ? '#ffffbf' :
-		       d > 2.5  ? '#a6d96a' :
+		return d > 8 ? '#d7191c' :
+		       d > 6  ? '#fdae61' :
+		       d > 4   ? '#ffffbf' :
+		       d > 2  ? '#a6d96a' :
 		       d > 0   ? '#1a9641' :
 		       			'#696969';
 	}
@@ -177,7 +179,7 @@ var legend = L.control({position: 'bottomleft'});
 	legend.onAdd = function (map) {
 
 		var div = L.DomUtil.create('div', 'info legend'),
-			grades = [0, 2.5, 5, 7.5, 10],
+			grades = [0, 2, 4, 6, 8],
 			labels = [],
 			from, to;
 
