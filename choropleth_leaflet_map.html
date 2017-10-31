@@ -15,8 +15,7 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--This calls my custom stylesheet href="assets/css/mystyle.css"-->
 		<link rel="stylesheet" href="assets/css/mystyle.css" />
-		<!--This calls the leaflet stylesheet-->
-		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css">
+		
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
@@ -25,44 +24,11 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
-			<!--This calls the leaflet javascript file-->
-			<!-- Make sure you put this AFTER Leaflet's CSS -->
-	 		<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
-	 	<!--This styles the page-->
-	 	<style>
-		#map {
-			width: 800px;
-			height: 500px;
-		}
-
-		.info {
-			padding: 6px 8px;
-			font: 14px/16px Arial, Helvetica, sans-serif;
-			background: white;
-			background: rgba(255,255,255,0.8);
-			box-shadow: 0 0 15px rgba(0,0,0,0.2);
-			border-radius: 5px;
-		}
-		.info h4 {
-			margin: 0 0 5px;
-			color: #777;
-		}
-
-		.legend {
-			text-align: left;
-			line-height: 18px;
-			color: #555;
-		}
-		.legend i {
-			width: 18px;
-			height: 18px;
-			float: right;
-			margin-right: 8px;
-			opacity: 0.7;
-		}
-	</style>
-	 		
-
+		<style>
+			#main {
+				justify-content: center;
+			}
+		</style>	
 	</head>
 	<body>
 
@@ -93,7 +59,11 @@
 						<header>
 							<h2>Choropleth Leaflet Map</h2>
 						</header>
-						<center><iframe src="leaflet_testing.html" width="800" height="600" frameborder="20" style="border: black" allowfullscreen></iframe></center>
+						<section class="wrapper style5">
+							<div class="inner">
+								<center><iframe src="https://kbogue13.github.io/portfolio/leaflet_testing" width="900" height="600" frameborder="20" style="border: black" allowfullscreen></iframe></center>
+							</div>
+						</section>		
 					</article>
 	</body>		
 
