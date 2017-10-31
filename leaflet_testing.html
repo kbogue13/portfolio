@@ -6,12 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!--Leaflet CSS-->
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
-	<!--SCRIPTS-->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/skel.min.js"></script>
-	<script src="assets/js/util.js"></script>
 	<!--Leaflet script. Must be placed after Leaflet CSS-->
 	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
 	
@@ -142,7 +136,7 @@ function highlightFeature(e) {
 			layer.bringToFront();
 		}
 
-		info.update(layer.feature.properties.CO2_PerCap);
+		info.update(layer.feature.properties);
 		}
 L.geoJson(CO2_PerCap, {style: style}).addTo(map);
 
