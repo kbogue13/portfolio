@@ -20,7 +20,7 @@
 
 		.info {
 			padding: 6px 8px;
-			font: 14px/16px Calibri, Garamond, sans-serif;
+			font: 16px/18px Calibri, Garamond, sans-serif;
 			background: white;
 			background: rgba(255,255,255,0.8);
 			box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -92,7 +92,7 @@
 	//Seems like there is somethig missing here that would define the props
 
 	info.update = function (props) {
-		this._div.innerHTML = '<h4>CO2 Emissions Per Person</h4>' +  (props ?
+		this._div.innerHTML = '<h4>Average CO2 Emissions Per Person</h4>' +  (props ?
 			'<b>' + props.country + '</b><br />' + props.CO2_PerCap + ' metric tons/year' + '<br />' + 'World Rank: ' + props.WORLD_RANK + '/198'
 			: 'Hover over a country');
 	};
@@ -102,10 +102,10 @@
 
 //// get color depending on CO2_PerCap which represents CO2 emissions per capita
 	function getColor(d) {
-		return d > 8 ? '#d7191c' :
-		       d > 6  ? '#fdae61' :
-		       d > 4   ? '#ffffbf' :
-		       d > 2  ? '#a6d96a' :
+		return d > 7.99 ? '#d7191c' :
+		       d > 5.99  ? '#fdae61' :
+		       d > 3.99   ? '#ffffbf' :
+		       d > 1.99  ? '#a6d96a' :
 		       d > 0   ? '#1a9641' :
 		       			'#696969';
 	}
@@ -174,7 +174,7 @@ var legend = L.control({position: 'bottomleft'});
 
 		var div = L.DomUtil.create('div', 'info legend'),
 			grades = [0, 2, 4, 6, 8],
-			labels = [],
+			labels = ['Tons/Year'],
 			from, to;
 
 		for (var i = 0; i < grades.length; i++) {
@@ -183,7 +183,7 @@ var legend = L.control({position: 'bottomleft'});
 
 			labels.push(
 				'<i style="background:' + getColor(from + 1) + '"></i> ' +
-				from + (to ? '&ndash;' + to : '+'));
+				from + (to ? '&ndash;' + (from + 1.99) : '+'));
 		}
 
 		div.innerHTML = labels.join('<br>');
