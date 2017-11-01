@@ -102,10 +102,10 @@
 
 //// get color depending on CO2_PerCap which represents CO2 emissions per capita
 	function getColor(d) {
-		return d > 7.99 ? '#d7191c' :
-		       d > 5.99  ? '#fdae61' :
-		       d > 3.99   ? '#ffffbf' :
-		       d > 1.99  ? '#a6d96a' :
+		return d > 7.9 ? '#d7191c' :
+		       d > 5.9  ? '#fdae61' :
+		       d > 3.9   ? '#ffffbf' :
+		       d > 1.9  ? '#a6d96a' :
 		       d > 0   ? '#1a9641' :
 		       			'#696969';
 	}
@@ -183,7 +183,7 @@ var legend = L.control({position: 'bottomleft'});
 
 			labels.push(
 				'<i style="background:' + getColor(from + 1) + '"></i> ' +
-				from + (to ? '&ndash;' + (from + 1.9) : '+'));
+				from + (to ? '&ndash;' + (from + 1.99) : '+'));
 		}
 
 		div.innerHTML = labels.join('<br>');
