@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Kevin G. Bogue -- Choropleth Leaflet Map</title>
+		<title>CO2 Emissions</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -35,7 +35,6 @@
 				max-width: 100%;
 				margin-right: auto;
 				margin-left: auto;
-				margin-top: 1px;
 			}
 		</style>	
 	</head>
@@ -66,15 +65,18 @@
 				<!-- Main -->
 					<article id="main">
 						<header>
-							<h2>How much CO2 does an average citizen produce?</h2>
+							<h2>How much CO2 does an average person produce?</h2>
 						</header>
 						<section class="wrapper style5">
+							<div class='ghg'>
+								<center>
+									Climate change is perhaps the single greatest threat to humankind and one of the biggest factors contributing to this threat are Greenhouse gasses (GHGs). GHGs are emitted through a number of processes including deforestation and the burning of fossil fuels. As they accumulate in the atmosphere, GHGs trap heat causing a warming process known as the greenhouse effect. Of the different types of GHGs, carbon dioxide (CO2) is the type that humans have the most control over thus the greatest ability to limit.<br><br>Often when climate change and GHGs are discussed they are presented in terms that are too large for most individuals to grasp and identify with. Using data obtained from the <a href="http://data.un.org/Data.aspx?q=co2+emissions+per+capita&d=WDI&f=Indicator_Code%3aEN.ATM.CO2E.PC">United Nations</a> and the <a href="http://leafletjs.com/">Leaflet JavaScript library</a>, this map seeks to provide an easier-to-understand and personal view of the amount of CO2 the average citizen in each country emits per year.<br><br></center>
+							</div>		
 							<div class="co2">
 								<center><iframe src="https://kbogue13.github.io/portfolio/leaflet_testing" width="66%" height="575" frameborder="20" align="middle"></iframe></center>
 							</div>
-							<div class='ghg'>
-								<center>
-									Greenhouse gasses (GHGs) play a huge role in climate change. When present in the atmosphere, these gases trap radiation in the form of heat, causing a warming process called the greenhouse effect. Of the many types of GHGs, carbon dioxide (CO2) is the type that humans have the most control over thus the greatest ability to curtail.<br><br>Often when climate change and GHGs are discussed it is presented in terms that are too large for most people to comprehend. Using data obtained from the <a href="http://data.un.org/Data.aspx?q=co2+emissions+per+capita&d=WDI&f=Indicator_Code%3aEN.ATM.CO2E.PC">United Nations</a> and the <a href="http://leafletjs.com/">Leaflet JavaScript library</a>, this map seeks to provide viewers an easier-to-understand and personal view of the amount of CO2 the average citizen in each country emits per year.<br><br>For reference, in 2013 the <b>global average was approximately 5 metric tons per person per year.</b><br><br>Of the 257 countries and territories identified by the United Nations, 198 reported data on CO2 emissions and each of those countries has been ranked in terms of their average CO2 emissions per person (1-198).
+							<div class="ghg">
+									<center>For reference, in 2013 the <b>global average CO2 emissions were 4.99 metric tons per person.</b><br><br>Of the 257 countries and territories identified by the United Nations, 198 reported data on CO2 emissions and each of those countries has been ranked in terms of their average CO2 emissions per person (1-198).
 								</center>
 							</div>
 						</section>		
