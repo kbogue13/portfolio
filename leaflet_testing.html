@@ -194,8 +194,8 @@ var legend = L.control({position: 'bottomleft'});
 	legend.addTo(map);
 
 //this portion of the script includes a POI for a group layer. Additioally the 'bindPopup' forces a popup with corresponding text.           
-         var qatar = L.marker([25.3548, 51.1839]).bindPopup('Qatar has the highest average CO2 emissions per person (40.46 metric tones per person)'),
-          	burundi = L.marker([-3.3731, 29.9189]).bindPopup('Burundi has the lowest average CO2 emissions per person (0.03 metric tons per person)');
+         var qatar = L.marker([25.3548, 51.1839]).bindPopup('Qatar has the <b>highest</b> average CO2 emissions per person (40.46 metric tones)'),
+          	burundi = L.marker([-3.3731, 29.9189]).bindPopup('Burundi has the <b>lowest</b> average CO2 emissions per person (0.03 metric tons)');
         
  //this line of code is going to combine the previous set of variables to a group and subsequently add them to a map.
          var cities = L.layerGroup([qatar, burundi]).addTo(map);
