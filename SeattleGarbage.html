@@ -56,7 +56,7 @@
     <script>
         var map = L.map('map', {
           center: [47.62, -122.33],
-          zoom: 12
+          zoom: 12.5
         });
 
          //change basemap from dropdown      
@@ -98,16 +98,16 @@
 var layer = L.esri.basemapLayer('DarkGray').addTo(map);
 
         
-  //set the tree variable to call the server to then display or add to the map
+  //set the SCHOOLS variable to call the server to then display or add to the map
         var seattleSchools = L.esri.featureLayer({url: 'https://gisrevprxy.seattle.gov/arcgis/rest/services/ext/WM_CityGISLayers/MapServer/61'}).addTo(map); 
-  //set the Seattle Landmarks variable call the server to then display or add to the map
+  //set the GARBAGE variable call the server to then display or add to the map
         var seattleGarbage = L.esri.featureLayer({url: 'https://gisrevprxy.seattle.gov/arcgis/rest/services/ext/WM_CityGISLayers/MapServer/69'}).addTo(map);
 
-  //customize the popup, do you no present a laundry list of attributes, think about what the end user needs to know.
+  //customize the schools popup
             seattleSchools.bindPopup(function (layer) {
               return L.Util.template('<h3><center>{SCHOOL}</center></h3><hr /><p><center>{ADDRESS}<center>', layer.feature.properties);
             }); 
-  //popup information for landmarks
+  //popup information for garbage
  
             seattleGarbage.bindPopup(function(layer) {
             return L.Util.template('<h3><center>Your waste management service provider is {CNTR_DESC}</center></h3><hr /><p><center>Garbage & recycling is picked up on {PCKUP_DAY}.</center>', layer.feature.properties);      
