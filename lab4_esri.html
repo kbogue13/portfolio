@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+<title>ESRI API</title>
+<link rel="stylesheet" href="https://js.arcgis.com/3.22/dijit/themes/tundra/tundra.css">
+<link rel="stylesheet" href="https://js.arcgis.com/3.22/esri/css/esri.css">
+<style>
+  html, body { height: 100%; width: 100%; margin: 0; padding: 0; }
+  #map { height: 100%; margin: 0; padding: 0; }
+  #meta {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    width: 290px;
+    height: 20px;
+    z-index: 40;
+    background: #fff;
+    color: #777;
+    padding: 5px;
+    border: 2px solid #000000;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    font-family: arial;
+    font-size: 0.9em;
+  }
+  #meta h3 {
+    color: #000000;
+    font-size: 1.1em;
+    padding: 0px;
+    margin: 0px;
+    display: inline-block;
+  }
+  #loading {
+    float: right;
+  }
+</style>
+
+<script src="https://js.arcgis.com/3.22/"></script>
+<script>
+  var map;
+  require([
+    "esri/map", "esri/layers/KMLLayer",
+    "dojo/parser", "dojo/dom-style",
+
+    "dijit/layout/BorderContainer", "dijit/layout/ContentPane", "dojo/domReady!"
+  ], function(
+    Map, KMLLayer,
+    parser, domStyle
+  ) {
+    map = new Map("map", {
+      basemap: "national-geographic",
+      center: [-160, 22],
+      zoom: 3
+    });
+
+    parser.parse();
+
+    var kmlUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/1.0_week_age_animated.kml";
+    var kml = new KMLLayer(kmlUrl);
+    map.addLayer(kml);
+    kml.on("load", function() {
+      domStyle.set("loading", "display", "none");
+    });
+  });
+</script>
+</head>
+
+<body class="tundra">
+<div data-dojo-type="dijit/layout/BorderContainer"
+     data-dojo-props="design:'headline',gutters:false"
+     style="width: 100%; height: 100%; margin: 0;">
+  <div id="map"
+       data-dojo-type="dijit/layout/ContentPane"
+       data-dojo-props="region:'center'">
+    <div id="meta">
+      <span id="loading"><img src="images/loading_black.gif" /></span>
+      <h3>Click on an event for more information</h3>
+      
+    </div>
+  </div>
+</div>
+</body>
+</html>

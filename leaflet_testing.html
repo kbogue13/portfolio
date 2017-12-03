@@ -88,7 +88,6 @@
 		return this._div;
 	};
 
-	//Seems like there is somethig missing here that would define the props
 
 	info.update = function (props) {
 		this._div.innerHTML = '<h4>Average CO2 Emissions Per Person</h4>' +  (props ?
@@ -155,8 +154,6 @@ var geojson;
 				mouseover: highlightFeature,
 				mouseout: resetHighlight,
 				click: zoomToFeature
-				//creates a popup with other important data when clicked
-			//click: layer.bindPopup('<strong>Name: </strong>' + feature.properties.NAME + '<br>' + '<strong>Estimated Population: </strong>' +  feature.properties.data_Estimated_Population + '<br>' + '<strong>Homeless Population: </strong>' + feature.properties.data_Total_Homeless+ '<br>' + '<strong>Percent Homeless: </strong>' + feature.properties.data_HomeRate);
 			});
 		}
 
