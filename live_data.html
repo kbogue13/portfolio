@@ -17,9 +17,15 @@
 		<link rel="stylesheet" href="assets/css/mystyle.css" />
 		<style >
 			.maps {
-				max-width: 100%
+				max-width: 100%;
 				margin-left: auto;
 				margin-right: auto;
+			}
+
+			.description {
+				max-width: 80%;
+				margin-right: auto;
+				margin-left: auto;
 			}
 		</style>
 
@@ -55,13 +61,26 @@
 						</header>
 						<section class="wrapper style5">
 							<div class="maps">
-								
+								<center><b>Google API with Keyhole Markup Language (KML) Data</b></center>
 									<center><iframe src="https://kbogue13.github.io/portfolio/lab4_googlekml.html" width="90%" height="575" frameborder="20" align="middle"></iframe></center>
 								<br>
+								<div class="description">
+									<center>This map was created using the Google Application Programming Interface (API) to illustrate live data from the US Geological Survey that has been formatted in Keyhole Markup Language (KML) format. It was relatively easy to make the data stream function, but it was remarkably difficult to customize anything once it was rendered. For instance, the legend was auto-created from the KML file and unfortunately shows all earthquakes as a magnitude 8 when clicking on an event shows the true magnitude. From a developer's standpoint this data stream was fairly easy to establish, but customization was difficult. From an end-user's perspective, this map is confusing and shows inaccurate data.</center>
+								</div>	
+								<br>
+									<center><b>Google API with GeoJSON Data</b></center>
 									<center><iframe src="https://kbogue13.github.io/portfolio/lab4_googlejson.html" width="90%" height="575" frameborder="20" align="middle"></iframe></center>
 								<br>
+								<div class="description">
+									<center>This map was created using the Google Application Programming Interface (API) to illustrate live data from the US Geological Survey that has been formatted in GeoJSON format. It was easier to customize than KML and also fairly simple to connect to the data stream. From a developer’s standpoint, the combination of Google API and GeoJSON was neither the most straightforward, nor the easiest, but the API and data format allowed for the greatest potential visual customization. From an end-user’s perspective, this map does a very good job of illustrating information, but the lack of ability to click on an event for further information is a drawback.</center>
+								</div>	
+								<br>
+									<center><b>ESRI API with KML Data</b></center>
 									<center><iframe src="https://kbogue13.github.io/portfolio/lab4_esri.html" width="90%" height="575" frameborder="20" align="middle"></iframe></center>
-									
+								<br>
+								<div class="description">
+									<center>This map was created using the ESRI Application Programming Interface (API) to illustrate live data from the US Geological Survey that has been formatted in KML format. It was easier to customize than the Google API with KML, but was more difficult to establish the data stream. From a developer’s standpoint, the combination of ESRI API and KML gave the best “out-of-the-box” representation, but customization was extremely difficult. From an end-user’s perspective it’s nice to be able to click an event for more information, but the different sized circles are confusing since there is no legend to equate size and magnitude.</center>	
+								</div>	
 							</div>
 
 						</section>		
