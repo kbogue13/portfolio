@@ -11,15 +11,14 @@
   #map { height: 100%; margin: 0; padding: 0; }
   #meta {
     position: absolute;
-    left: 20px;
-    bottom: 20px;
-    
+    right: 70px;
+    bottom: 50px;
     height: 20px;
     z-index: 40;
     background: #fff;
     color: #777;
     padding: 5px;
-    border: 2px solid #000000;
+    border: 2px solid red;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
@@ -33,11 +32,37 @@
     margin: 0px;
     display: inline-block;
   }
+  
   #loading {
     float: right;
   }
-</style>
 
+ #title {
+ 	position: absolute;
+    left: 70px;
+    top: 30px;
+    height: 20px;
+    z-index: 40;
+    background: #fff;
+    color: #777;
+    padding: 5px;
+    border: 2px solid #000000;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    font-family: arial;
+    font-size: 0.9em;
+ }
+ 
+ #title h3{
+ 	color: #000000;
+    font-size: 1.1em;
+    padding: 0px;
+    margin: 0px;
+    display: inline-block;
+ }
+</style>
+<!--load ESRI API-->
 <script src="https://js.arcgis.com/3.22/"></script>
 <script>
   var map;
@@ -57,7 +82,7 @@
     });
 
     parser.parse();
-
+//add KML from USGS
     var kmlUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/1.0_week_age_animated.kml";
     var kml = new KMLLayer(kmlUrl);
     map.addLayer(kml);
@@ -75,11 +100,14 @@
   <div id="map"
        data-dojo-type="dijit/layout/ContentPane"
        data-dojo-props="region:'center'">
+ <!--add title and info box-->
     <div id="meta">
       <span id="loading"><img src="images/loading_black.gif" /></span>
       <h3>Click on an event for more information</h3>
-      
-    </div>
+      </div>
+  	<div id="title">
+  		<h3>Earthquakes Over Past 7 Days</h3>
+	</div>
   </div>
 </div>
 </body>
