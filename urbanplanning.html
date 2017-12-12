@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Kevin G. Bogue -- Maps</title>
+		<title>Urban Planning</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -15,7 +15,19 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--This calls my custom stylesheet href="assets/css/mystyle.css"-->
 		<link rel="stylesheet" href="assets/css/mystyle.css" />
+		<style >
+			.maps {
+				max-width: 100%;
+				margin-left: auto;
+				margin-right: auto;
+			}
 
+			.description {
+				max-width: 80%;
+				margin-right: auto;
+				margin-left: auto;
+			}
+		</style>
 
 	</head>
 	<body>
@@ -45,63 +57,14 @@
 				<!-- Main -->
 					<article id="main">
 						<header>
-							<h2>Maps</h2>
+							<h2>Mapping Spatial Solutions to Urban Problems</h2>
 						</header>
 						<section class="wrapper style5">
-							<div class="outer">
-
-				<!-- Links to specific projects -->
-							<div class="container">
-								<div class="row">
-									<div class="col-md-5">
-										<div class="thumbnail portfolio-thumbnail">
-											<a href="simple_google_map.html" >
-												<img src="images/Albania_Flag.jpg">
-												<br>
-									Simple Google Map
-											</a>
-										</div>
-									</div>
-									<div class="col-md-5">
-										<div class="thumbnail portfolio-thumbnail">
-											<a href="choropleth_leaflet_map.html">
-												<img src="images/globe.png">
-												<br>
-									Leaflet Choropleth Map
-											</a>
-										</div>
-									</div>
-									<div class="col-md-5">
-										<div class="thumbnail portfolio-thumbnail">
-											<a href="rest.html">
-												<img src="images/rest.jpg">
-												<br>
-									REST
-											</a>
-										</div>
-									</div>
-									<div class="col-md-5">
-										<div class="thumbnail portfolio-thumbnail">
-											<a href="live_data.html">
-												<img src="images/live-data.png">
-												<br>
-									Live Data
-											</a>
-										</div>
-									</div>	
-									<div class="col-md-5">
-									<div class="thumbnail portfolio-thumbnail">
-										<a href="urbanplanning.html">
-											<img src="images/CoverPhoto.png">
-											<br>
-								Urban Planning
-										</a>
-									</div>
-									</div>
-								</div>
+							<div class="maps">
+								<center><iframe width="100%" height="800px" src="http://uwt-gis-geotech.maps.arcgis.com/apps/MapJournal/index.html?appid=678469b280484c1e9a48a9d6d1314149" frameborder="0" scrolling="no"></iframe></center>
 							</div>
-						</secion>
-					</article>
+
+						</section>		
 
 				<!-- Footer -->
 					<footer id="footer">
@@ -111,6 +74,7 @@
 							</li>
 						</ul>
 					</footer>
+
 			</div>
 
 		<!-- Scripts -->
