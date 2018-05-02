@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Kevin G. Bogue -- ASARCO Remediation</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--This calls my custom stylesheet href="assets/css/mystyle.css"-->
+		<link rel="stylesheet" href="assets/css/mystyle.css" />
+		<style>
+			.goog{
+				width: 80%;
+				margin-right: auto;
+				margin-left: auto;
+			}
+		</style>
+	</head>
+<body>
+	<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">Kevin G. Bogue</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="index.html">Home</a></li>
+											<li><a href="about.html">About</a></li>
+											<li><a href="maps.html">Maps</a></li>
+											<li><a href="analysis.html">Analysis</a></li>
+											<li><a href="research.html">Research</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+				<!-- Main -->
+					<article id="main">
+						<header>
+							<h2>The Toxic Legacy of the ASARCO Smelter</h2>
+							<center>For almost 100 years, the Asarco Company operated a copper smelter in Tacoma, WA. Air pollution from the smelter settled on the surface soil over more than 1,000 square miles of the Puget Sound basin. Arsenic, lead, and other heavy metals are still in the soil as a result of this pollution.<br>-Washington State Department of Ecology</center>
+						</header>
+						<section class="wrapper style5">
+							<div class="goog">
+								<h2><center>Using Soil Samples to Determine Levels of Toxic Material</center></h2>
+								<center><img id="comp-izeehg84imgimage" alt="" data-type="image" style="width: 882px; height: 587px; object-fit: cover;" src="https://static.wixstatic.com/media/f060b2_87bec348180c4776933b9bdf3a9f1763~mv2_d_3456_2304_s_2.png/v1/fill/w_882,h_587,al_c,usm_0.66_1.00_0.01/f060b2_87bec348180c4776933b9bdf3a9f1763~mv2_d_3456_2304_s_2.png"></center>
+								<center>To determine the levels of toxic materials (arsenic and lead) in the soil around Pierce County, the Washington State Department of Ecology took soil samples from 277 locations around Pierce County at depths between 0-2 inches, and 6-12 inches. The findings from each sample site were recorded in a spreadsheet from which much of the information used to complete this analysis was derived. However, because the soil samples were collected in 2001, the current levels of arsenic and lead in Pierce County soil may not be accurately reflected. Findings at each site were converted to a point layer, then classified as either ‘Lead’ or ‘Arsenic’ and  were used to create a point feature class for the respective toxic material due to both materials existing simultaneously at every site. For both feature classes a dissolve was performed to obtain the mean concentration of lead and arsenic  respectively  for each sample site.</center>
+								
+								<br>
+								
+								<h2><center>Statistical Interpolation to Model Soil Toxicity Levels</center></h2>
+								<center>Arsenic Levels</center>
+								<center><img id="comp-izej2x95imgimage" alt="" data-type="image" style="width: 882px; height: 484px; object-fit: cover;" src="https://static.wixstatic.com/media/f060b2_204989c7125844ddacd8bc4a84a788ae~mv2.png/v1/fill/w_882,h_484,al_c,usm_0.66_1.00_0.01/f060b2_204989c7125844ddacd8bc4a84a788ae~mv2.png"></center>
+								<br>
+								<center>Lead Levels</center>
+								<center><img id="comp-izejnjizimgimage" alt="" data-type="image" style="width: 882px; height: 484px; object-fit: cover;" src="https://static.wixstatic.com/media/f060b2_8b54301287924d6793cab038860919b5~mv2.png/v1/fill/w_882,h_484,al_c,usm_0.66_1.00_0.01/f060b2_8b54301287924d6793cab038860919b5~mv2.png"></center>
+								<center>From the soil sample data, the Kriging method of statistical interpolation was employed to model levels of Arsenic and Lead found in the soil for all of Pierce County in raster format. The results were reclassified based on standard deviation and symbolized using a green-to-pink (surface) color ramp where green indicates low levels of toxic material and pink indicates high levels.</center>
+								
+								<br>
+
+								<h2><center>Locations of Most Vulnerable Populations</center></h2>
+								<center><img id="comp-izekytreimgimage" alt="" data-type="image" style="width: 882px; height: 624px; object-fit: cover;" src="https://static.wixstatic.com/media/f060b2_9b84f332539144599b51d65af60441b5~mv2.png/v1/fill/w_882,h_624,al_c,usm_0.66_1.00_0.01/f060b2_9b84f332539144599b51d65af60441b5~mv2.png"></center>
+								<center>For the purpose of this analysis, the population deemed most vulnerable to toxic soil was children under 10 years old. Census data was used to determine the number of children under 10 years old by block group in Pierce County. That data was joined to spatial data depicting each block group, then the density of children per square mile was calculated and converted to point data located at the center of each block group for all of Pierce County, which is why it appears as though there are populations of children in places where one would not expect to find any -- i.e. in the water. This procedure was done this way for modeling purposes and will be addressed in the next step.</center>
+
+								<br>
+
+								<h2><center>Modeling Child Density Using IDW</center></h2>
+								<center><img id="comp-izellq89imgimage" alt="" data-type="image" style="width: 882px; height: 484px; object-fit: cover;" src="https://static.wixstatic.com/media/f060b2_f6c5d6f8e031420b918633a9557f6e1e~mv2.png/v1/fill/w_882,h_484,al_c,usm_0.66_1.00_0.01/f060b2_f6c5d6f8e031420b918633a9557f6e1e~mv2.png"></center>
+								<center>Using the Inverse Distance Weighted (IDW) method, the density of children under 10 per square mile was modeled in raster form. The data was then reclassified based on standard deviation and symbolized using a green-to-pink (surface) color ramp where green indicates low child density and pink indicates high child density.</center>
+
+								<br>
+
+								<h2><center>Need For Environmental Remediation</center></h2>
+								<center><img id="comp-izembldlimgimage" alt="" data-type="image" style="width: 882px; height: 624px; object-fit: cover;" src="https://static.wixstatic.com/media/f060b2_585593428b8c4c928391b128e6b5629e~mv2_d_3456_2304_s_2.png/v1/fill/w_882,h_624,al_c,usm_0.66_1.00_0.01/f060b2_585593428b8c4c928391b128e6b5629e~mv2_d_3456_2304_s_2.png"></center>
+								<center>With raster data for levels of arsenic and lead in soil as well as child density, the Raster Calculator was employed to determine the areas in Pierce County most in need of environmental remediation. Based on the data contained within each raster, a composite "score" was calculated and symbolized using the green-to-pink (surface) color ramp where green indicates a low score -- low levels of arsenic and lead, low child density -- and pink indicates a high score -- high levels of arsenic and lead, high child density -- and the greatest need for environmental remediation.</center>
+
+								<br>
+								<center><h2><a href="lidar.html">Next</h2></center>
+
+
+							</div>	
+						</section>
+					</article>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="copyright">
+							<li>&copy; Kevin G. Bogue<br><br>
+						To discuss my work please contact me at <a href="mailto:kbogue13@uw.edu">kbogue13@uw.edu</a>
+							</li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

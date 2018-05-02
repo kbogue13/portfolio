@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Kevin G. Bogue -- LiDAR</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--This calls my custom stylesheet href="assets/css/mystyle.css"-->
+		<link rel="stylesheet" href="assets/css/mystyle.css" />
+		<style>
+			.goog{
+				width: 80%;
+				margin-right: auto;
+				margin-left: auto;
+			}
+		</style>
+	</head>
+<body>
+	<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">Kevin G. Bogue</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="index.html">Home</a></li>
+											<li><a href="about.html">About</a></li>
+											<li><a href="maps.html">Maps</a></li>
+											<li><a href="analysis.html">Analysis</a></li>
+											<li><a href="research.html">Research</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+				<!-- Main -->
+					<article id="main">
+						<header>
+							<h2>Using LiDAR to Create a 3D Campus Map for the University of Washington | Tacoma</h2>
+						</header>
+						<section class="wrapper style5">
+							<div class="goog">
+								<h2><center>What is LiDAR?</center></h2>
+								<center><span class="color_26">According to the National Oceanic and Atmospheric Administration (<span style="text-decoration:underline;"><a href="http://oceanservice.noaa.gov/facts/lidar.html" target="_blank" data-content="http://oceanservice.noaa.gov/facts/lidar.html" data-type="external" rel="nofollow">NOAA</a></span>), LiDAR, which stands for Light Detection and Ranging, is a remote sensing method that uses light in the form of a pulsed laser to measure ranges (variable distances) to the Earth. These light pulses—combined with other data recorded by the airborne system— generate precise, three-dimensional information about the shape of the Earth and its surface characteristics.</span></center>
+								
+								<br>
+								
+								<h2><center>Beginning Steps</center></h2>
+								<center><img id="comp-j1tws5hsimgimage" alt="" data-type="image" style="width: 494px; height: 508px; object-fit: cover;" src="https://static.wixstatic.com/media/f060b2_2b880e346288422699238ff31ef45df2~mv2.png/v1/fill/w_494,h_508,al_c,usm_0.66_1.00_0.01/f060b2_2b880e346288422699238ff31ef45df2~mv2.png"></center>
+								<center>LiDAR data in the form of tables for Bare Earth (BE) returns and All Returns was obtained from the University of Washington, then converted to X,Y point layers for each table, where each point corresponded to a LiDAR return -- 2,346,696 points for AllReturns and 1,152,976 points for BE</center>
+								<br>
+								<center>Bare Earth</center>
+								<center><img id="comp-j1tz6s3oimgimage" alt="" data-type="image" style="width: 353px; height: 257px; object-fit: cover;" src="https://static.wixstatic.com/media/f060b2_f94a426d3c9045a78581a35d6024851a~mv2.png/v1/fill/w_353,h_257,al_c,usm_0.66_1.00_0.01/f060b2_f94a426d3c9045a78581a35d6024851a~mv2.png"></center>
+								<center>AllReturns</center>
+								<center><img id="comp-j1tz5cj1imgimage" alt="" data-type="image" style="width: 353px; height: 257px; object-fit: cover;" src="https://static.wixstatic.com/media/f060b2_d73d1668c6f8461d8719fec2eae68548~mv2.png/v1/fill/w_353,h_257,al_c,usm_0.66_1.00_0.01/f060b2_d73d1668c6f8461d8719fec2eae68548~mv2.png"></center>
+								<center>Using the points created from the BE and ALLReturns LiDAR tables, the Inverse Distance Weighted (IDW) method of statistical interpolation was employed to model the height of the different point layers (BE and AllReturns) as separate rasters using the green-to-pink surface color ramp where green indicates low elevations and pink indicates higher elevations. Layered on top of the BE and AllReturns rasters are University of Washington Tacoma building polygons.</center>
+
+								<br>
+
+								<h2><center>Calculating Building Height</center></h2>
+								<center><img id="comp-j1tzo24gimgimage" alt="" data-type="image" style="width: 724px; height: 393px; object-fit: cover;" src="https://static.wixstatic.com/media/f060b2_d9bb28a92d8841828ef15bc6dfe83ec7~mv2.png/v1/fill/w_724,h_393,al_c,usm_0.66_1.00_0.01/f060b2_d9bb28a92d8841828ef15bc6dfe83ec7~mv2.png"></center>
+								<center>In order to best determine height for the buildings on the UWT campus, two different methods were utilized -- Zonal Statistics and Extract Values to Points -- on both the BE and AllReturns rasters to determine ground elevation as well as building elevation.
+								<br>
+								<br>
+								The Zonal Statistics results can be seen in the above table where RValue_ALL represents the calculated heights of the UWT buildings above sea level, RValue_BE represents the calculated elevation of the ground above sea level, and PointHeight represents the difference between the two, which is the height of the different buildings using this method.
+								<br>
+								<br>
+								The Extract Values to Points results can also be seen in the above table where Mean_all represents the calculated height of the UWT buildings above sea level, Mean_BE represents the calculated elevation of the ground above sea level, and Mean_height represents the difference between the two, which is the height of the different buildings using this method.
+								<br>
+								<br>
+								A quick examination and comparison of the results of the different methods of determining height shows that the results are quite a bit different. The difference in calculation between the two methods can be seen in the above table in the Difference field.
+								<br>
+								<br>
+								Solely based on the information in the table, it is impossible to determine which method produced more accurate results. In an effort to utilize the most correct data possible, I walked the grounds of the UWT campus to compare what I estimated the building heights to be in comparison to the heights derived from the different measurement methods.
+								<br>
+								<br>
+								​Based on comparison between real-world observation and tabular data, I determined that, at least in this instance, the Extract Values to Points method of calculation was more accurate. However, that data still contained some heights that were very inaccurate, which were updated in the attribute table to better-reflect reality.</center>
+								<br>
+
+								<h2><center>Initial Cartography</center></h2>
+								<center><img src="https://static.wixstatic.com/media/f060b2_e2c6a756d4294b27b71d2c69ac4c37b4~mv2.png/v1/fill/w_714,h_462,al_c,usm_0.66_1.00_0.01/f060b2_e2c6a756d4294b27b71d2c69ac4c37b4~mv2.png" alt="https://static.wixstatic.com/media/f060b2_e2c6a756d4294b27b71d2c69ac4c37b4~mv2.png/v1/fill/w_714,h_462,al_c,usm_0.66_1.00_0.01/f060b2_e2c6a756d4294b27b71d2c69ac4c37b4~mv2.png"></center>
+								<center>An initial cartographic iteration of a campus map for UWT can be seen above. It was created by 'draping' an orthophoto of UWT over the BE raster, and adding an extrusion to the buildings layer. However, drawing from observation of the campus grounds and UWT's official list of buildings, I discovered that between the creation of the UWT building shapefile and the present, the university has built or acquired multiple new buildings, and that the original author had mistakenly omitted one preexisting campus building.</center>
+								<br>
+								<h2><center>Digitizing New Buildings</center></h2>
+								<center><img id="comp-j1u1d888imgimage" alt="" data-type="image" style="width: 525px; height: 440px; object-fit: cover;" src="https://static.wixstatic.com/media/f060b2_8a75551289f9447ea43dd3be8aede531~mv2.png/v1/fill/w_525,h_440,al_c,usm_0.66_1.00_0.01/f060b2_8a75551289f9447ea43dd3be8aede531~mv2.png"></center>
+								<center>Reverting to 2D, I used the previously mentioned ortho photo of the campus to digitize the approximate locations of the buildings that had been missed in the old data for various reasons. Buildings that existed in the old data are symbolized in purple, while buildings previously unaccounted for are symbolized in pink.</center>
+								<br>
+								<center><img id="comp-j1u1u9e5imgimage" alt="" data-type="image" style="width: 525px; height: 440px; object-fit: cover;" src="https://static.wixstatic.com/media/f060b2_8e00ed9c091b4984a7f92e265d193def~mv2.png/v1/fill/w_525,h_440,al_c,usm_0.66_1.00_0.01/f060b2_8e00ed9c091b4984a7f92e265d193def~mv2.png"></center>
+								<center>There are two particular buildings on campus that have very interesting shapes -- the Snoqualmie Library building and the Court 17 Apartments -- but, unfortunately due to graininess of the available orthophoto, it was very difficult to digitize their proper shape. However, in the midst of this analysis, the University was able to obtain a much higher resolution orthophoto from the City of Tacoma, which allowed me to properly digitize the shape of those two buildings -- symbolized in pink -- as well as adjust a couple polygons that represent other buildings on campus.</center>
+								<br>
+								<h2><center>Final Cartography</center></h2>
+								<center><img id="comp-j1u2qkt4imgimage" alt="" data-type="image" style="width: 882px; height: 589px; object-fit: cover;" src="https://static.wixstatic.com/media/f060b2_5b7e90a4375443a4a5f7d38382ad4d39~mv2_d_3492_2328_s_2.png/v1/fill/w_882,h_589,al_c,usm_0.66_1.00_0.01/f060b2_5b7e90a4375443a4a5f7d38382ad4d39~mv2_d_3492_2328_s_2.png"></center>
+								<center>The UWT buildings layer, with the newly digitized additional buildings, was imported into ArcScene where, it was layered on top of the new higher-resolution orthophoto, and the BE raster, which, after the addition of a couple graphics and a legend, resulted in the above University of Washington Tacoma campus map.</center>
+
+								<br>
+								<center><h2><a href="cost.html">Next</h2></center>
+
+
+
+							</div>	
+						</section>
+					</article>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="copyright">
+							<li>&copy; Kevin G. Bogue<br><br>
+						To discuss my work please contact me at <a href="mailto:kbogue13@uw.edu">kbogue13@uw.edu</a>
+							</li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

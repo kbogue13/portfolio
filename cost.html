@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Kevin G. Bogue -- Cost Analysis</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--This calls my custom stylesheet href="assets/css/mystyle.css"-->
+		<link rel="stylesheet" href="assets/css/mystyle.css" />
+		<style>
+			.goog{
+				width: 80%;
+				margin-right: auto;
+				margin-left: auto;
+			}
+		</style>
+	</head>
+<body>
+	<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">Kevin G. Bogue</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="index.html">Home</a></li>
+											<li><a href="about.html">About</a></li>
+											<li><a href="maps.html">Maps</a></li>
+											<li><a href="analysis.html">Analysis</a></li>
+											<li><a href="research.html">Research</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+				<!-- Main -->
+					<article id="main">
+						<header>
+							<h2>Cost Analysis to Determine Travel Paths</h2>
+						<center>What is the safest route for the largest number of children travel to the nearest large park?</center>
+						</header>
+						<section class="wrapper style5">
+							<div class="goog">
+								<h2><center>Assessing Child Density</center></h2>
+								<center><img id="comp-j2xf0belimgimage" alt="" data-type="image" style="width: 600px; height: 402px; object-fit: cover;" src="https://static.wixstatic.com/media/f060b2_8f32f1269ec048a4b347d081659d5e0c~mv2.png/v1/fill/w_600,h_402,al_c,usm_0.66_1.00_0.01/f060b2_8f32f1269ec048a4b347d081659d5e0c~mv2.png"></center>
+								<center><span>Using the child density point data created to analyze the need for <span style="text-decoration:underline;"><a href="http://kbogue13.wixsite.com/portfolio/toxic-remediation" target="_self">toxic remediation in Pierce County</a></span>, a hot spot analysis was performed to determine areas of high and low child density based on z-score (the distance of a value from the mean) at the blocks enumeration level for the entire Tacoma/Pierce County Urban Metro Area. Areas symbolized red indicate a high child density and areas symbolized blue indicate a low child density.</span></center>
+								
+								<br>
+								
+								<center><img id="comp-j2xg8deaimgimage" alt="" data-type="image" style="width: 699px; height: 471px; object-fit: cover;" src="https://static.wixstatic.com/media/f060b2_2a80678494974d03ad446a6543162938~mv2.png/v1/crop/x_139,y_20,w_1224,h_827/fill/w_699,h_471,al_c,usm_0.66_1.00_0.01/f060b2_2a80678494974d03ad446a6543162938~mv2.png"></center>
+								<center>This analysis is only interested in areas with a high child density, so within the attribute table of the hot spot analysis, the blocks with the highest child density z-score that also held a p-value (the chance that the z-score is statistically random) below 10% were isolated and exported to create a new polygon feature class</center>
+								
+								<br>
+
+								<center><img id="comp-j2xgo2p8imgimage" alt="" data-type="image" style="width: 699px; height: 467px; object-fit: cover;" src="https://static.wixstatic.com/media/f060b2_4a9702ce539e4284a7f8ad96074c3a6c~mv2.png/v1/fill/w_699,h_467,al_c,usm_0.66_1.00_0.01/f060b2_4a9702ce539e4284a7f8ad96074c3a6c~mv2.png"></center>
+								<center>This analysis is particularly interested in identifying larger areas where there are concentrations of young children. Therefore it is necessary to identify clusters of several blocks. To do that the high child density polygons from Fig. 2 were aggregated to points with an aggregation distance of 2000-feet (points within that distance from each other will be combined) to produce a new polygonal feature class containing the aggregated point data</center>
+
+								<br>
+
+								<center><img id="comp-j2xgy01himgimage" alt="" data-type="image" style="width: 520px; height: 357px; object-fit: cover;" src="https://static.wixstatic.com/media/f060b2_72587e19b56e4ec4a68610a5dbba0608~mv2.png/v1/crop/x_284,y_0,w_1237,h_847/fill/w_520,h_357,al_c,usm_0.66_1.00_0.01/f060b2_72587e19b56e4ec4a68610a5dbba0608~mv2.png"></center>
+								<center>Because this analysis is particularly interested in larger areas with high child density, the largest polygon (by area) was selected from the feature class and converted to a point which will serve as the starting point for cost path analysis</center>
+
+								<br>
+
+								<h2><center>Finding Large Parks Nearest the Largest Area with the Highest Child Density</center></h2>
+								<center><img id="comp-j2xhcpblimgimage" alt="" data-type="image" style="width: 699px; height: 467px; object-fit: cover;" src="https://static.wixstatic.com/media/f060b2_06c09739dedb480bb81dd31b34782c44~mv2.png/v1/fill/w_699,h_467,al_c,usm_0.66_1.00_0.01/f060b2_06c09739dedb480bb81dd31b34782c44~mv2.png"></center>
+								<center>The purpose of the cost path analysis is to define paths between the largest area with a high child density and large parks in the Tacoma/Pierce County Urban Metro Area. A Pierce County parks polygon feature class was added, from which parks larger than 50-acres were isolated and exported to create a new feature class containing only large parks
+								<br>
+								<br>
+								The large parks serve as the destinations for the cost path analysis. While it would be possible to run the analysis using the previously mentioned point of child density as the origin and the centroid of each large park as the destination, this analysis is less concerned with distance to the center of any particular park and more concerned with distance to edge of a given park since, upon arrival, children have a multitude of choices about where to go and what to do.
+								<br>
+								<br>
+								<center><img id="comp-j2xj7hqjimgimage" alt="" data-type="image" style="width: 600px; height: 534px; object-fit: cover;" src="https://static.wixstatic.com/media/f060b2_16d38084096b42b78b4a0cda7c060722~mv2.png/v1/fill/w_600,h_534,al_c,usm_0.66_1.00_0.01/f060b2_16d38084096b42b78b4a0cda7c060722~mv2.png"></center>
+								To determine the distance from the point of child density to the edge of large parks the 'Generate Near Table' tool was used where 5-miles was determined to be the search radius -- the tool will identify and plot at point at the edge of parks within a 5-mile radius of the origin.
+								</center>
+								<br>
+
+								<h2><center>Creating the Cost Surface</center></h2>
+								<center>The cost surface for this analysis will consider slope of terrain, distance from the point of highest child density, and the classification of streets along which travel will occur. In order to create a functional dataset, the slope, distance, and streets need to be converted to raster form and reclassified to allow for calculation when creating the cost path.
+								<center><img id="comp-j30fs3n2imgimage" alt="" data-type="image" style="width: 600px; height: 534px; object-fit: cover;" src="https://static.wixstatic.com/media/f060b2_6e09c6575278466eae1fd2d5aed36c7b~mv2.png/v1/crop/x_30,y_27,w_989,h_807/fill/w_405,h_329,al_c,usm_0.66_1.00_0.01/f060b2_6e09c6575278466eae1fd2d5aed36c7b~mv2.png"></center>
+								<center>The first step in this process was creating the slope layer for the Tacoma/Pierce County Metro Area</center>
+								<br>
+								<center><img id="comp-j30fv1alimgimage" alt="" data-type="image" style="width: 405px; height: 329px; object-fit: cover;" src="https://static.wixstatic.com/media/f060b2_2239739d162848a2abe6d98bcf88d9b3~mv2.png/v1/fill/w_405,h_329,al_c,usm_0.66_1.00_0.01/f060b2_2239739d162848a2abe6d98bcf88d9b3~mv2.png"></center>
+								<center>The slope layer needed to be reclassified so that a range of slope values were given a numerical classification (1-10)</center>
+
+								<center><img id="comp-j30h40nnimgimage" alt="" data-type="image" style="width: 405px; height: 329px; object-fit: cover;" src="https://static.wixstatic.com/media/f060b2_64f6301854474ccf91f14138e617b04e~mv2.png/v1/fill/w_405,h_329,al_c,usm_0.66_1.00_0.01/f060b2_64f6301854474ccf91f14138e617b04e~mv2.png"></center>
+								<center>To determine distance from the point of highest child density, the Euclidian Distance tool was used.</center>
+
+								<center><img id="comp-j30h40npimgimage" alt="" data-type="image" style="width: 405px; height: 329px; object-fit: cover;" src="https://static.wixstatic.com/media/f060b2_e3d301ab2990485c8fc505484bdb2c9d~mv2.png/v1/fill/w_405,h_329,al_c,usm_0.66_1.00_0.01/f060b2_e3d301ab2990485c8fc505484bdb2c9d~mv2.png"></center>
+								<center>The data was then reclassified into 10 classes so that different ranges of distance values were given a numerical classification.</center>
+
+								<center><img id="comp-j30hlvxzimgimage" alt="" data-type="image" style="width: 405px; height: 329px; object-fit: cover;" src="https://static.wixstatic.com/media/f060b2_b527e42b77d4478ebe8c64074cd4cf56~mv2.png/v1/fill/w_405,h_329,al_c,usm_0.66_1.00_0.01/f060b2_b527e42b77d4478ebe8c64074cd4cf56~mv2.png"></center>
+								<center>Line data representing streets for Pierce County were clipped to the Tacoma/Pierce County Metro Area, and given a classification (1-9) within the attribute table with streets with slower speed limits given lower values than streets with higher speed limits. After these calculations were performed, the streets data was converted to a raster based on the previously discussed classification.</center>
+								
+								<center><img id="comp-j30hlvy3imgimage" alt="" data-type="image" style="width: 405px; height: 329px; object-fit: cover;" src="https://static.wixstatic.com/media/f060b2_e0494f60acfa42e38d0e343a0c7e3f3e~mv2.png/v1/fill/w_405,h_329,al_c,usm_0.66_1.00_0.01/f060b2_e0494f60acfa42e38d0e343a0c7e3f3e~mv2.png"></center>
+								<center>A portion of the rasterized streets is visible above. A reclassification operation was performed in order to give areas with no data (i.e. off road areas) a classification of 10, with the goal of making off road travel prohibitive for the cost analysis.</center>
+
+								<center><img id="comp-j30i37dbimgimage" alt="" data-type="image" style="width: 405px; height: 329px; object-fit: cover;" src="https://static.wixstatic.com/media/f060b2_372f080d5fda4efeb68c303e62dfd99c~mv2.png/v1/fill/w_405,h_329,al_c,usm_0.66_1.00_0.01/f060b2_372f080d5fda4efeb68c303e62dfd99c~mv2.png"></center>
+								<center>A raster calculation was performed using the reclassified slope, distance, and streets rasters where each was given a weight relative to their impact on the travel path. Roads classification was given 50% of the total weight,slope was given 30%, and distance was given 20%.</center>
+
+								<center><img id="comp-j30igh01imgimage" alt="" data-type="image" style="width: 405px; height: 329px; object-fit: cover;" src="https://static.wixstatic.com/media/f060b2_67b33fa5e9cf4017b83066c3769e8fec~mv2.png/v1/fill/w_405,h_329,al_c,usm_0.66_1.00_0.01/f060b2_67b33fa5e9cf4017b83066c3769e8fec~mv2.png"></center>
+								<center><img id="comp-j30igh04imgimage" alt="" data-type="image" style="width: 405px; height: 329px; object-fit: cover;" src="https://static.wixstatic.com/media/f060b2_36c0ce95a56b4a01a25b4e143104af66~mv2.png/v1/fill/w_405,h_329,al_c,usm_0.66_1.00_0.01/f060b2_36c0ce95a56b4a01a25b4e143104af66~mv2.png"></center>
+								<center>The cost distance tool was utilized to calculate the cost of traveling over each individual cell. The output of this operation was two rasters: 1) a distance raster containing the accumulative cost distance over a cost surface to the point of highest child density, and 2) a backlink raster which can be used to identify the least costly direction of travel from one cell in the cost surface to another. The distance and backlink rasters are used as inputs for a cost path analysis.</center>
+
+								<h2><center>Determining Cost Paths</center></h2>
+								<center>All Paths</center>
+								<center><img id="comp-j30iys01imgimage" alt="" data-type="image" style="width: 405px; height: 329px; object-fit: cover;" src="https://static.wixstatic.com/media/f060b2_e9191d8ebfc24902854303810bcb3f95~mv2.png/v1/fill/w_405,h_329,al_c,usm_0.66_1.00_0.01/f060b2_e9191d8ebfc24902854303810bcb3f95~mv2.png"></center>
+								
+								<center>The purpose of the cost path analysis was to define the least costly paths between the point of highest child density and large parks in the Tacoma/Pierce County Metro Area -- paths with a low aggregate score for slope, distance, and road classification. To determine the least costly paths, the Cost Path tool was utilized where the distance and backlink rasters were used as inputs for the tool to calculate cost paths. All calculated paths can be seen above</center> 
+								<center><img id="comp-j30jb6meimgimage" alt="" data-type="image" style="width: 882px; height: 638px; object-fit: cover;" src="https://static.wixstatic.com/media/f060b2_c7349c3e88b0417f9f8f2fc10f89b5af~mv2.png/v1/crop/x_96,y_0,w_1171,h_847/fill/w_882,h_638,al_c,usm_0.66_1.00_0.01/f060b2_c7349c3e88b0417f9f8f2fc10f89b5af~mv2.png"></center>
+								<center>The final calculated path from the point of highest child density to the nearest large park can be seen above.</center>
+							</div>	
+						</section>
+					</article>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="copyright">
+							<li>&copy; Kevin G. Bogue<br><br>
+						To discuss my work please contact me at <a href="mailto:kbogue13@uw.edu">kbogue13@uw.edu</a>
+							</li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
