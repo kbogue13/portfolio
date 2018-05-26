@@ -43,12 +43,12 @@
 
     <div id="basemaps-wrapper" class="leaflet-bar">
   <select name="basemaps" id="basemaps" onChange="changeBasemap(basemaps)">
+    <option value="DarkGray">Dark Gray</option>
     <option value="Topographic">Topographic</option>
     <option value="Streets">Streets</option>
     <option value="NationalGeographic">National Geographic</option>
     <option value="Oceans">Oceans</option>
     <option value="Gray">Gray</option>
-    <option value="DarkGray">Dark Gray</option>
     <option value="Imagery">Imagery</option>
     <option value="ShadedRelief">Shaded Relief</option>
   </select>
@@ -60,7 +60,7 @@
         });
 
          //change basemap from dropdown      
-                 var layer = L.esri.basemapLayer('Topographic').addTo(map);
+                 var layer = L.esri.basemapLayer("Topographic").addTo(map);
   var layerLabels;
 
   function setBasemap(basemap) {
@@ -99,14 +99,14 @@ var layer = L.esri.basemapLayer('DarkGray').addTo(map);
 
         
   //set the SCHOOLS variable to call the server to then display or add to the map
-        var seattleSchools = L.esri.featureLayer({url: 'https://gisrevprxy.seattle.gov/arcgis/rest/services/ext/WM_CityGISLayers/MapServer/61'}).addTo(map); 
+        //var seattleSchools = L.esri.featureLayer({url: 'https://gisrevprxy.seattle.gov/arcgis/rest/services/ext/WM_CityGISLayers/MapServer/61'}).addTo(map); 
   //set the GARBAGE variable call the server to then display or add to the map
         var seattleGarbage = L.esri.featureLayer({url: 'https://gisrevprxy.seattle.gov/arcgis/rest/services/ext/WM_CityGISLayers/MapServer/69'}).addTo(map);
 
   //customize the schools popup
-            seattleSchools.bindPopup(function (layer) {
-              return L.Util.template('<h3><center>{SCHOOL}</center></h3><hr /><p><center>{ADDRESS}<center>', layer.feature.properties);
-            }); 
+            //seattleSchools.bindPopup(function (layer) {
+              //return L.Util.template('<h3><center>{SCHOOL}</center></h3><hr /><p><center>{ADDRESS}<center>', layer.feature.properties);
+           // }); 
   //popup information for garbage
  
             seattleGarbage.bindPopup(function(layer) {
